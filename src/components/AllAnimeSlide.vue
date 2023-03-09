@@ -15,10 +15,10 @@
          in cardFilling" :key="i">
           <router-link :to="`/WatchView/${i}`" class="premium-card border">
             <div class="card-img">
-              <img :src="'/img/' + premiumCardItem.img" />
+              <img :src="'/img/' + $store.state.anime.img" />
             </div>
             <div class="card-about">
-              <dt class>{{ premiumCardItem.title }}</dt>
+              <dt class>{{ $store.state.anime.title }}</dt>
               <div class="genre-wrap">
                 <p
                   class="genre"

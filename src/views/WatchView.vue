@@ -6,30 +6,30 @@
         <div class="details-wrap">
           <div class="details-anime d-md-flex">
             <div class="anime-img">
-              <img :src="'/img/' + $store.state.anime.img " alt />
+              <img :src="'/img/' + $store.state.anime.img "/>
             </div>
             <div class="anime-detal-about p-0 container-fluid">
               <div class="finfo"></div>
               <div class="container-fluid m-0 p-0">
                 <div class="detal-series">
                   <dt class>Nomi:</dt>
-                  <dd class>Serial</dd>
+                  <dd class>{{$store.state.anime.title}}</dd>
                 </div>
                 <div class="detal-series">
                   <dt class>Sanasi:</dt>
-                  <dd class>Serial</dd>
+                  <dd class>{{$store.state.anime.dateTime}}</dd>
                 </div>
                 <div class="detal-series">
                   <dt class>Janr:</dt>
-                  <dd class>Serial</dd>
+                  <dd class>{{$store.state.anime.genre}}</dd>
                 </div>
                 <div class="detal-series">
                   <dt class>tili:</dt>
-                  <dd class>AniBro</dd>
+                  <dd class>{{$store.state.anime.language}}</dd>
                 </div>
                 <div class="detal-series">
                   <dt class>Davomiyligi:</dt>
-                  <dd class>24min</dd>
+                  <dd class>{{$store.state.anime.duration}}</dd>
                 </div>
               </div>
             </div>
@@ -184,28 +184,6 @@ export default {
         },
         {
           format: "MOBILE HD 480P"
-        }
-      ],
-      animeTitle: { title: "One Piece" },
-      mainIMG: { img: "anime_img.png" },
-      cadre: [
-        {
-          img: "kadr-1.png"
-        },
-        {
-          img: "kadr-2.png"
-        },
-        {
-          img: "kadr-3.png"
-        },
-        {
-          img: "kadr-4.png"
-        },
-        {
-          img: "kadr-5.png"
-        },
-        {
-          img: "kadr-6.png"
         }
       ],
       episode: [
