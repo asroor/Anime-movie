@@ -14,10 +14,10 @@
           <div class="swiper-wrapper py-1">
             <div
               class="swiper-slide border shadow-inner"
-              v-for="premiumCardItem of cardFilling"
-              :key="premiumCardItem"
+              v-for="(premiumCardItem, i) in cardFilling"
+              :key="i"
             >
-              <div class="premium-card">
+              <router-link :to="`/WatchView/${i}`" class="premium-card">
                 <!-- <div class="sale-anime">
                   <i :class="{'active-icon' : activeIcon  }" v-on:click="classAvtive()" class="fas fa-save"></i>
                   <i class="fas fa-cart-arrow-down"></i>
@@ -53,7 +53,7 @@
                   </p>
                   <p class="text-lowercase">{{ premiumCardItem.type }}</p>
                 </div>
-              </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -77,9 +77,7 @@ export default {
     };
   },
   methods: {
-    classAvtive(){
-        this.activeIcon  = !this.activeIcon
-    }
+
   },
   mounted() {
     if (Swiper) {

@@ -2,7 +2,7 @@
   <div class="container">
     <HomeTop />
     <div class="allAnime-cards row">
-      <div class="col-md-4 col-lg-2 col-6 mb-1" v-for="allCard of card" :key="allCard">
+      <div class="col-md-4 col-lg-2 col-6 mb-1" v-for="allCard of $store.state.allAnime" :key="allCard">
         <div class="premium-card border">
           <div class="card-img">
             <img :src="'/img/' + allCard.img" />
@@ -56,83 +56,9 @@ export default {
   components: { HomeTop },
   data() {
     return {
-      card: [
-        {
-          img: "5premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "6premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "7premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "8premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "9premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "10premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "10premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "11premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "12premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "13premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "14premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        },
-        {
-          img: "15premium-card.png",
-          title: "Мэйджор. Мяч дружбы / 2008 ",
-          type: "anime serial",
-          viewer: 323232
-        }
-      ],
       genre: [{ genreText: "Sport" }, { genreText: "maktab" }]
     };
-  }
+  },
 };
 </script>
 

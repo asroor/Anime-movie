@@ -9,9 +9,25 @@
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
 import HomeView from "./views/HomeView.vue";
+import axios from 'axios';
 
 export default {
-  components: { HomeView, Footer, Header }
+  components: { HomeView, Footer, Header },
+  data(){
+    return{
+      allData:[],
+      API: "https://api.svqt.uz/about/all",
+    }
+  },
+  created(){
+    axios.get(this.API)
+      .then((res) => {
+        this.allData = res.data
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 };
 </script>
 <style>

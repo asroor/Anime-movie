@@ -6,7 +6,7 @@
         <div class="details-wrap">
           <div class="details-anime d-md-flex">
             <div class="anime-img">
-              <img :src="'/img/' + mainIMG.img " alt />
+              <img :src="'/img/' + $store.state.anime.img " alt />
             </div>
             <div class="anime-detal-about p-0 container-fluid">
               <div class="finfo"></div>
@@ -39,7 +39,7 @@
           </div>
           <!-- anime about -->
           <div class="anime-about">
-            <p>Gol D. Rojer "Qaroqchilar qiroli" sifatida tanilgan bo'lib, Grand Lineda suzib o'tgan eng kuchli va eng obro'li mavjudot. Rojerning Jahon hukumati tomonidan qo'lga olinishi va qatl etilishi butun dunyoda o'zgarishlarga olib keldi. Uning o'limidan oldingi so'nggi so'zlari dunyodagi eng katta xazina - One Piece mavjudligini ochib berdi. Aynan shu vahiy cheksiz boylik va shon-shuhratni va'da qiladigan One Piece-ni va ehtimol shon-shuhrat cho'qqisini va Pirat Qiroli unvonini topishni orzu qilgan qaroqchilarning Buyuk Asrini keltirib chiqardi.</p>
+            <p>{{ $store.state.anime.about }}</p>
           </div>
         </div>
         <!-- Watch video -->
@@ -175,6 +175,7 @@ import HomeTop from "../components/Home-top.vue";
 import RightElement from "../components/RightElement.vue";
 
 export default {
+  components: { HomeTop, RightElement },
   data() {
     return {
       downloadBtn: [
@@ -227,7 +228,9 @@ export default {
   mounted() {
     const player = new Plyr(".vid1");
   },
-  components: { HomeTop, RightElement }
+  created(){
+    this.$store.commit("findAnime",this.$route.params.id);
+  }
 };
 </script>
 

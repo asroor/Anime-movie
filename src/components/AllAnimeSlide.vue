@@ -11,8 +11,9 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide" v-for="premiumCardItem of cardFilling" :key="premiumCardItem">
-          <div class="premium-card border">
+        <div class="swiper-slide" v-for="(premiumCardItem, i) 
+         in cardFilling" :key="i">
+          <router-link :to="`/WatchView/${i}`" class="premium-card border">
             <div class="card-img">
               <img :src="'/img/' + premiumCardItem.img" />
             </div>
@@ -33,7 +34,7 @@
               </p>
               <p class="text-lowercase">{{ premiumCardItem.type }}</p>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>

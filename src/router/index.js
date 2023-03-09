@@ -1,16 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Example from "@/views/Example.vue"
-import Example2 from "@/views/Example2.vue"
 import HomeView from "@/views/HomeView.vue"
 import WatchView from "@/views/WatchView.vue"
 import AllAnime from "@/views/AllAnime.vue"
 import Profill from "@/views/Profill.vue"
 import adminChat from "@/views/adminChat.vue"
 import News from "@/views/News.vue"
+import Purchase from "@/views/Purchase.vue"
+import PremimumOne from "@/views/PremimumOne.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/Purchase', 
+      name :'Purchase', 
+      component: Purchase
+    },
     {
       path: '/News', 
       name :'News', 
@@ -32,7 +37,7 @@ const router = createRouter({
       component: AllAnime
     },
     {
-      path: '/WatchView', 
+      path: '/WatchView/:id', 
       name :'WatchView', 
       component: WatchView
     },
@@ -42,14 +47,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/example',
-      name: "example",
-      component: Example
-    },
-    {
-      path: '/example2',
-      name: "example2",
-      component: Example2
+      path: '/premimum/:id',
+      name: "PremimumOne",
+      component: PremimumOne
     }
   ]
 })

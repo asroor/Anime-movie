@@ -10,7 +10,9 @@
             </div>
         </div>
         <div class="col-xl-6">
-            
+            <div class="online-news">
+              <iframe class="" width="100%" height="350px" src="https://www.youtube.com/embed/VKCDPNxZ1gk" title="HINATA | barney sku - Your eyes [Amv / edit ]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
   </div>
