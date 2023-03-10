@@ -18,10 +18,6 @@
               :key="i"
             >
               <router-link :to="`/WatchView/${i}`" class="premium-card">
-                <!-- <div class="sale-anime">
-                  <i :class="{'active-icon' : activeIcon  }" v-on:click="classAvtive()" class="fas fa-save"></i>
-                  <i class="fas fa-cart-arrow-down"></i>
-                </div> -->
                 <div class="card-img">
                   <div class="card-eps">
                     <div class="eps">
@@ -37,11 +33,7 @@
                 <div class="card-about">
                   <dt class>{{ premiumCardItem.title }}</dt>
                   <div class="genre-wrap">
-                    <p
-                      class="genre"
-                      v-for="genreItem of genreFilling"
-                      :key="genreItem"
-                    >{{ genreItem.genreText }}</p>
+                    <p>{{ premiumCardItem.genre }}</p>
                   </div>
                 </div>
                 <div
@@ -64,7 +56,7 @@
 
 <script scoped>
 export default {
-  props: ["cardFilling", "genreFilling"],
+  props: ["cardFilling",],
   data() {
     return {
 

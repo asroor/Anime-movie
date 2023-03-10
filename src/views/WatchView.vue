@@ -6,7 +6,7 @@
         <div class="details-wrap">
           <div class="details-anime d-md-flex">
             <div class="anime-img">
-              <img :src="'/img/' + $store.state.anime.img "/>
+              <img :src="'/img/' + $store.state.anime.img " alt />
             </div>
             <div class="anime-detal-about p-0 container-fluid">
               <div class="finfo"></div>
@@ -158,8 +158,8 @@
             <strong>Kadrdlar:</strong>
           </div>
           <div class="kadr">
-            <div class="kadr-img" v-for="cadreItem of cadre" :key="cadreItem">
-              <img class="zoom" :src="'/img/' + cadreItem.img" />
+            <div class="kadr-img" v-for="img in $store.state.anime.images" :key="img">
+              <img class="zoom" :src="'/img/' + img" />
             </div>
           </div>
         </div>
@@ -186,6 +186,8 @@ export default {
           format: "MOBILE HD 480P"
         }
       ],
+      animeTitle: { title: "One Piece" },
+      mainIMG: { img: "anime_img.png" },
       episode: [
         { number: 1 },
         { number: 2 },
@@ -200,7 +202,7 @@ export default {
         { number: 11 },
         { number: 12 },
         { number: 13 }
-      ]
+      ],
     };
   },
   mounted() {

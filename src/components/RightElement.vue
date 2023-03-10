@@ -24,12 +24,12 @@
           >
             <div class="accordion-body">
               <router-link
-                to="/WatchView"
+                :to="`/WatchView/${anime.id}`"
                 class="accordion-card"
-                v-for="accardionCard in accardionCard"
-                :key="accardionCard"
+                v-for="anime in moreAnime"
+                :key="anime"
               >
-                <img :src="'/img/' + accardionCard.img" />
+                <img :src="'/img/' + anime.img" />
                 <i class="far fa-play-circle"></i>
               </router-link>
             </div>
@@ -110,34 +110,23 @@
 export default {
   data() {
     return {
-        accardionCard: [
-        {
-          img: "9premium-card.png"
-        },
-        {
-          img: "8premium-card.png"
-        },
-        {
-          img: "10premium-card.png"
-        },
-        {
-          img: "11premium-card.png"
-        },
-        {
-          img: "12premium-card.png"
-        },
-        {
-          img: "13premium-card.png"
-        },
-        {
-          img: "14premium-card.png"
-        },
-        {
-          img: "15premium-card.png"
-        }
-      ]
+      moreAnime: [],
     };
+  },
+  created() {
+    this.filterMoreAnime();
+  },
+  methods:{
+    filterMoreAnime(){
+      let arr = this.$store.state.showMoreAnime;
+      arr.forEach(element => {
+        let new_arr = this.$store.state.allAnime.filter(a => a.id == element);
+        this.moreAnime.push(new_arr[0]);
+      });
+      console.log(this.moreAnime);
+    }
   }
+
 };
 </script>
 

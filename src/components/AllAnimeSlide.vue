@@ -11,28 +11,24 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide" v-for="(premiumCardItem, i) 
+        <div class="swiper-slide" v-for="(AllAnimeSlide, i) 
          in cardFilling" :key="i">
-          <router-link :to="`/WatchView/${i}`" class="premium-card border">
+          <router-link :to="`/WatchView/${i}`" class="premium-card d-block border">
             <div class="card-img">
-              <img :src="'/img/' + $store.state.anime.img" />
+              <img :src="'/img/' + AllAnimeSlide.img" />
             </div>
             <div class="card-about">
-              <dt class>{{ $store.state.anime.title }}</dt>
+              <dt class>{{ AllAnimeSlide.title }}</dt>
               <div class="genre-wrap">
-                <p
-                  class="genre"
-                  v-for="genreItem of genreFilling"
-                  :key="genreItem"
-                >{{ genreItem.genreText }}</p>
+                <p class="genre">{{ AllAnimeSlide.genre }}</p>
               </div>
             </div>
             <div class="card-bottom border-top d-flex align-items-center justify-content-between">
               <p class="view text-lowercase">
                 <i class="fas fa-eye"></i>
-                {{ premiumCardItem.viewer }}
+                {{ AllAnimeSlide.viewer }}
               </p>
-              <p class="text-lowercase">{{ premiumCardItem.type }}</p>
+              <p class="text-lowercase"></p>
             </div>
           </router-link>
         </div>
@@ -43,7 +39,7 @@
 
 <script>
 export default {
-  props: ["genreFilling", "cardFilling"],
+  props: ["cardFilling"],
   data() {
     return {};
   },
