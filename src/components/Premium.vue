@@ -18,6 +18,7 @@
               :key="i"
             >
               <router-link :to="`/WatchView/${i}`" class="premium-card">
+              
                 <div class="card-img">
                   <div class="card-eps">
                     <div class="eps">

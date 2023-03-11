@@ -38,7 +38,7 @@ export default {
         text:
           "Naruto 4: Zulmat podshohligining tarafdorlari Bir paytlar dunyoni vayron qilgan iblis ozod etildi! Endi faqat bir kishi ayanchli natijani oldini oladi - Shion ismli qiz. U ikkita kuchga ega - jinlarni muhrlash va fol ochish. Albatta, iblis kuchlari qizni ovlashni boshlaydi va Naruto, Sakura, Li va Neji jamoasi Shionni himoya qilishi va unga jinni muhrlashiga yordam berishi kerak. Biroq, Shion Narutoning o'limini bashorat qiladi. Va u endi nima qiladi? Albatta, har doimgidek, taqdirga qarshi boradi!"
       },
-      card: this.$store.state.allAnime,
+      card: this.$store.state.allAnime
     };
   }
 };

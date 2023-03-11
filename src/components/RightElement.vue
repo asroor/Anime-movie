@@ -57,12 +57,12 @@
           >
             <div class="accordion-body">
               <router-link
-                to="/WatchView"
+                :to="`/WatchView/${anime.id}`"
                 class="accordion-card"
-                v-for="accardionCard in accardionCard"
-                :key="accardionCard"
+                v-for="anime in rankAnime"
+                :key="anime"
               >
-                <img :src="'/img/' + accardionCard.img" />
+                <img :src="'/img/' + anime.img" />
                 <i class="far fa-play-circle"></i>
               </router-link>
             </div>
@@ -90,12 +90,12 @@
           >
             <div class="accordion-body">
               <router-link
-                to="/WatchView"
+                :to="`/WatchView/${anime.id}`"
                 class="accordion-card"
-                v-for="accardionCard in accardionCard"
-                :key="accardionCard"
+                v-for="anime in movieAnime"
+                :key="anime"
               >
-                <img :src="'/img/' + accardionCard.img" />
+                <img :src="'/img/' + anime.img" />
                 <i class="far fa-play-circle"></i>
               </router-link>
             </div>
@@ -107,36 +107,48 @@
 </template>
 
 <script>
+import { isTemplateNode } from "@vue/compiler-core";
+
 export default {
   data() {
     return {
       moreAnime: [],
+      rankAnime: [],
+      movieAnime: []
     };
   },
   created() {
     this.filterMoreAnime();
   },
-  methods:{
-    filterMoreAnime(){
+  methods: {
+    filterMoreAnime() {
       let arr = this.$store.state.showMoreAnime;
+      let rank = this.$store.state.rankAnime;
+      let movieAnime = this.$store.state.movieAnime;
       arr.forEach(element => {
         let new_arr = this.$store.state.allAnime.filter(a => a.id == element);
         this.moreAnime.push(new_arr[0]);
       });
-      console.log(this.moreAnime);
+      rank.forEach(item => {
+        let new_rank = this.$store.state.allAnime.filter(b => b.id == item);
+        this.rankAnime.push(new_rank[0]);
+      });
+      movieAnime.forEach(movieAnimeItem => {
+        let new_movieAnime = this.$store.state.allAnime.filter(b => b.id == movieAnimeItem);
+        this.movieAnime.push(new_movieAnime[0]);
+      });
     }
   }
-
 };
 </script>
 
 <style scoped>
 .coming-right[data-v-00859aee] {
-    margin-top: 0;
+  margin-top: 0;
 }
 .accordion-body[data-v-00859aee] {
-    padding: 0;
-    margin-top: 10px;
+  padding: 0;
+  margin-top: 10px;
 }
 
 .accordion-body {
